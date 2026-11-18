@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 
-static class Decoder {
+final class Decoder {
     static byte[] decode(String text) {
         Map<String, Integer> lookup = new HashMap<>();
-        for (int i =0; i< Emojibet.EMOJIS.length, i++) {
+        for (int i =0; i< Emojibet.EMOJIS.length; i++) {
         lookup.put(Emojibet.EMOJIS[i], i);
         }
         List<Integer> hexDigits = new java.util.ArrayList<>();

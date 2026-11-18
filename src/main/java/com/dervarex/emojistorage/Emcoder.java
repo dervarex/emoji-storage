@@ -1,12 +1,15 @@
 package com.dervarex.emojistorage;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
-static class Emcoder {
+final class Emcoder {
     static String encode(byte[] data) {
         StringBuilder out = new StringBuilder(data.length * 2 * 4);
-        for (byte byte : data) {
-            int value = byte & 0xFF;
+        for (byte b : data) {
+            int value = b & 0xFF;
             out.append(Emojibet.EMOJIS[value >> 4]);
             out.append(Emojibet.EMOJIS[value & 0x0F]);
         }
